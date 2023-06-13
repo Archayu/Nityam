@@ -4,3 +4,5 @@ Settings/config.js
 /Settings/config.js
 Settings/config.jsss
 /Settings/config.jssss
+.gitignore
+.env

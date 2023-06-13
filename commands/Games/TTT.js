@@ -1,48 +1,51 @@
 const {
-    ApplicationCommandOptionType,
-    ChannelType,
-    EmbedBuilder,
-  } = require("discord.js");
-const ttt = require('discord.tictactoegame');
-const game = new ttt();
+  ApplicationCommandOptionType,
+  ChannelType,
+  EmbedBuilder,
+} = require("discord.js");
 
-
-  module.exports = {
-    name: ["games", "ttt"],
-    description: "play tic tac toe",
-    category: "Games",
-    options: [
-        {
-          
-            name: "user",
-            required: false,
-            description: "The User Whom You Want To Play With",
-            type: ApplicationCommandOptionType.User
-          
-        }
-    ],
-    permissions: {
-      channel: [],
-      bot: [],
-      user: [],
+module.exports = {
+  name: ["games", "ttt"],
+  description: "play tic tac toe",
+  category: "Games",
+  options: [
+    {
+      name: "user",
+      required: true,
+      description: "The User Whom You Want To Play With",
+      type: ApplicationCommandOptionType.User,
     },
-    settings: {
-      isPremium: false,
-      isOwner: false,
-      inVoice: false,
-      isNSFW: false,
-    },
-    run: async (interaction, client) => {
+  ],
+  permissions: {
+    channel: [],
+    bot: [],
+    user: [],
+  },
+  settings: {
+    isPremium: false,
+    isOwner: false,
+    inVoice: false,
+    isNSFW: false,
+  },
+  run: async (interaction, client) => {
+    await interaction.deferReply({ ephemeral: false }).catch(() => {});
 
-      const User = interaction.options.getUser("user")
-      if (User && User.bot) return interaction.reply({ content: "You can not play the game with bots" })
+    const opponent = interaction.options.getUser("user");
+    if (!opponent) return interaction.followUp({ content: "Please mention who you want to challenge" });
 
-     
-      interaction.reply({ content: `The game is started` });
+    const { TicTacToe } = require("discord-gamecord");
 
-      if (!User) game.solo(interaction, client)
-      else game.duo(interaction, User);
+    new TicTacToe({
+      
+      message: interaction,
+      opponent: opponent,
+      xColor: "red",
+      oColor: "blurple",
+      xEmoji: "❌",
+      oEmoji: "0️⃣",
+      isSlashGame: true,
+    }).startGame();
+    
 
-    },
-  };
-  
+  },
+};
