@@ -5,5 +5,7 @@
     "queue": 1,
     "uptime": 1,
     "help": 1,
-    "avatar": 1
+    "avatar": 1,
+    "rps": 4,
+    "ttt": 6
 }
