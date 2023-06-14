@@ -2,8 +2,13 @@ const chillout = require("chillout");
 const readdirRecursive = require("recursive-readdir");
 const { resolve, relative } = require("path");
 const { green, white } = require('chalk');
+const { RESTEvents, RESTJSONErrorCodes } = require("discord.js");
+const { Events } = require("discord.js");
 
 module.exports = async (client) => {
+
+  
+  
     let interactionsPath = resolve("./commands");
     let interactionFiles = await readdirRecursive(interactionsPath);
 

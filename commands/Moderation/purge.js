@@ -5,7 +5,7 @@ const {
 } = require("discord.js");
 module.exports = {
   name: ["purge"],
-  description: "purge messages/links/attachments/emojis from a channel",
+  description: "purge messages/links/attachments from a channel",
   category: "Moderation",
   options: [
     {
@@ -35,11 +35,8 @@ module.exports = {
         {
           name: "bots",
           value: "bots",
-        },
-        {
-          name: "emojis",
-          value: "emojis",
-        },
+        }
+
       ],
     },
   ],
@@ -68,8 +65,6 @@ module.exports = {
       client.purger.purgeMessagesWithAttachments(interaction, channel, number);
     } else if (filter === "bots") {
       client.purger.purgeBotMessages(interaction, channel);
-    } else if (filter === "emojis") {
-      client.purger.purgeMessagesWithEmojis(interaction, channel, number);
     }
   },
 };

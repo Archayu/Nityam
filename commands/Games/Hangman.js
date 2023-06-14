@@ -41,7 +41,7 @@ module.exports = {
                 color: 'Orange',
             },
             hangman: { hat: '🎩', head: '😟', shirt: '👕', pants: '🩳', boots: '👞👞' },
-            customWord: 'Nityam',
+            customWord: null,
             timeoutTime: 60000,
             theme: themes[Math.floor(Math.random() * themes.length)],
             winMessage: 'You won! The word was **{word}**.',

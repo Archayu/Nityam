@@ -9,6 +9,12 @@ module.exports = async (client) => {
             const eName = file.split('.')[0];
             client.on(eName, evt.bind(null, client));
         }
+
+        readdirSync("./Events/Rest/").forEach(file => {
+            const event2 = require(`../../Events/Rest/${file}`);
+            let eventName2 = file.split(".")[0];
+            client.rest.on(eventName2, event2.bind(null, client));
+        })
     };
     ["Client", "Guild"].forEach((x) => loadcommand(x));
     console.log(white('[') + green('INFO') + white('] ') + green('Event ') + white('Events') + green(' Loaded!'));

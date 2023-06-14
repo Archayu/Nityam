@@ -166,7 +166,7 @@ module.exports = async (client, interaction) => {
     if (command) {
       try {
         client.addCount(command.name.at(-1));
-        command.run({interaction: interaction, client: client});
+        command.run(interaction,  client);
       } catch (error) {
         await interaction.reply({
           content: `This Slash Command Is Not Registered And Hence Not Supported`,

@@ -31,7 +31,7 @@ const Game = new Wordle({
     title: 'Wordle',
     color: 'Orange',
   },
-  customWord: words({ exactly: 1, maxLength: 7 }),
+  customWord: `${words({ exactly: 1, maxLength: 7 })}`,
   timeoutTime: 60000,
   winMessage: 'You won! The word was **{word}**.',
   loseMessage: 'You lost! The word was **{word}**.',

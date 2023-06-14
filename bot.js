@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection } = require("discord.js");
+const { Client, GatewayIntentBits, Collection, RESTEvents, Events } = require("discord.js");
 const { DisTube } = require('distube');
 const { SoundCloudPlugin } = require('@distube/soundcloud');
 const { SpotifyPlugin } = require('@distube/spotify');
@@ -48,7 +48,7 @@ class MainClient extends Client {
     const client = this;
 
     ["slash", "premiums"].forEach(x => client[x] = new Collection());
-    ["Command", "Giveaways", "Music", "Manager", "Functions","errLogger","Events", "Database",].forEach(x => require(`./Handler/${x}`)(client));
+    ["Command", "Giveaways", "Manager", "Functions","errLogger","Events", "Database",].forEach(x => require(`./Handler/${x}`)(client));
 
 	}
 		connect() {
