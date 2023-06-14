@@ -2,8 +2,6 @@ const {
   PermissionsBitField, InteractionType, PermissionFlagsBits
 } = require("discord.js");
 const chalk = require("chalk");
-const ytsr = require("@distube/ytsr");
-const { SEARCH_DEFAULT } = require("../../Settings/config")
 module.exports = async (client, interaction) => {
 //=================================== Command Interaction =====================================\\
   if (
@@ -25,29 +23,6 @@ module.exports = async (client, interaction) => {
     try {
       subCommandGroupName = interaction.options.getSubcommandGroup();
     } catch {}
-
-    if (interaction.type == InteractionType.ApplicationCommandAutocomplete) {
-      const Random = SEARCH_DEFAULT[Math.floor(Math.random() * SEARCH_DEFAULT.length)];
-      if(interaction.commandName == "play") {
-          let choice = []
-          await ytsr(interaction.options.getString("search") || Random, { safeSearch: true, limit: 10 }).then(result => {
-              result.items.forEach(x => { choice.push({ name: x.name, value: x.url }) })
-          });
-          return await interaction.respond(choice).catch(() => { });
-      } else if (interaction.options.getSubcommand() == "playskip") {
-          let choice = []
-          await ytsr(interaction.options.getString("search") || Random, { safeSearch: true, limit: 10 }).then(result => {
-              result.items.forEach(x => { choice.push({ name: x.name, value: x.url }) })
-          });
-          return await interaction.respond(choice).catch(() => { });
-      } else if (interaction.options.getSubcommand() == "playtop") {
-          let choice = []
-          await ytsr(interaction.options.getString("search") || Random, { safeSearch: true, limit: 10 }).then(result => {
-              result.items.forEach(x => { choice.push({ name: x.name, value: x.url }) })
-          });
-          return await interaction.respond(choice).catch(() => { });
-      }
-  }
 
     const command = client.slash.find((command) => {
       switch (command.name.length) {
