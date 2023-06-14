@@ -4,7 +4,7 @@ const {
     EmbedBuilder,
 } = require("discord.js");
 module.exports = {
-    name: ["games", "Flood"],
+    name: ["games", "flood"],
     description: "play Flood",
     category: "Games",
     options: [],

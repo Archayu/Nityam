@@ -3,13 +3,12 @@ const {
     ChannelType,
     EmbedBuilder,
   } = require("discord.js");
-  const words = require("random-words");
+ const words = require('random-words');
   module.exports = {
     name: ["games", "wordle"],
     description: "A Game Of Wordle",
     category: "Games",
-    options: [
-    ],
+    options: [],
     permissions: {
       channel: [],
       bot: [],

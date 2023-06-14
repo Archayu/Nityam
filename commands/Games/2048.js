@@ -3,8 +3,7 @@
     name: ["games", "2048"],
     description: "play 2048",
     category: "Games",
-    options: [
-    ],
+    options: [],
     permissions: {
       channel: [],
       bot: [],
@@ -16,8 +15,8 @@
       inVoice: false,
       isNSFW: false,
     },
-    run: async (interaction) => {
-      await interaction.deferReply({ ephemeral: false }).catch(() => {});
+    run: async (interaction, client) => {
+      
         const { TwoZeroFourEight } = require("discord-gamecord");
 
         await new TwoZeroFourEight({
