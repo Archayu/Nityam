@@ -20,6 +20,7 @@ module.exports = {
         isNSFW: false,
     },
     run: async (interaction, client) => {
+        await interaction.deferReply({ ephemeral: false }).catch(() => {});
         const { FastType } = require('discord-gamecord');
         await new FastType({
             message: interaction,

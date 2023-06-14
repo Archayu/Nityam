@@ -42,6 +42,7 @@
     "opusscript": "^0.0.8",
     "path": "^0.12.7",
     "plsargs": "^0.1.6",
+    "random-words": "^2.0.0",
     "recursive-readdir": "^2.2.3",
     "st.db": "^6.0.1",
     "stuffs": "^0.1.27",

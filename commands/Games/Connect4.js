@@ -28,6 +28,7 @@ const {
       isNSFW: false,
     },
     run: async (interaction, client) => {
+      await interaction.deferReply({ ephemeral: false }).catch(() => {});
         const { Connect4 } = require("discord-gamecord");
         const opponent = interaction.options.getUser("user");
         if (!opponent) return interaction.followUp({ content: "Please mention who you want to challenge" });

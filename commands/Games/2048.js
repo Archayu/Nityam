@@ -17,6 +17,7 @@
       isNSFW: false,
     },
     run: async (interaction) => {
+      await interaction.deferReply({ ephemeral: false }).catch(() => {});
         const { TwoZeroFourEight } = require("discord-gamecord");
 
         await new TwoZeroFourEight({
