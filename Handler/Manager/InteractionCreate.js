@@ -23,6 +23,7 @@ module.exports = (client) => {
         message: interaction.message?.id,
       });
       if (sug) {
+        
         await interaction.deferReply({ ephemeral: true });
         if (interaction.customId === "sug-up") {
           if (sug.votes.down.includes(interaction.user.id))

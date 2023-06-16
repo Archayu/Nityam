@@ -4,7 +4,6 @@ const { EmbedBuilder} = require("discord.js")
 const { MONGO_URI } = require("../../Settings/config")
 module.exports = async (client) => {
     console.log(white('[') + green('INFO') + white('] ') + green(`${client.user.tag} (${client.user.id})`) + white(` is Ready!`));
-    client.giveaways.connect(MONGO_URI)
     const users = await Premium.find();
     for (let user of users) {
       client.premiums.set(user.Id, user);
