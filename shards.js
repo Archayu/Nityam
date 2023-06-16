@@ -18,4 +18,6 @@ manager.on("shardCreate", (shard) => {
   shard.on("ready", () => {
     console.log(`[CLIENT] Shard ${shard.id} connected`);
   });
+
+
 });

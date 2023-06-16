@@ -37,6 +37,8 @@ class MainClient extends Client {
     ["slash", "premiums"].forEach(x => client[x] = new Collection());
     ["Command", "Giveaways", "Manager", "Functions","errLogger","Events", "Database",].forEach(x => require(`./Handler/${x}`)(client));
 
+    require("./deploySlash.js")(client, this.config);
+
 	}
 		connect() {
         return super.login(this.token);
