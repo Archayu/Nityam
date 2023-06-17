@@ -6,3 +6,5 @@ Settings/config.jsss
 /Settings/config.jssss
 .gitignore
 .env
+node_modules Windows
+node_modules Linux
