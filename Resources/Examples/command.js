@@ -2,9 +2,11 @@ const {
   ApplicationCommandOptionType,
   ChannelType,
   EmbedBuilder,
+  CommandInteraction,
+  Client
 } = require("discord.js");
 module.exports = {
-  name: [],
+  name: [""],
   description: "",
   category: "",
   options: [],
@@ -19,5 +21,9 @@ module.exports = {
     inVoice: false,
     isNSFW: false,
   },
+      /**
+     * @param {CommandInteraction} interaction
+     * @param {Client} client   
+     */
   run: async (interaction, client) => {},
 };

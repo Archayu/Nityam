@@ -15,7 +15,7 @@ const {
                 name: "channel",
                 description: "channel to add/remove",
                 type: ApplicationCommandOptionType.Channel,
-                channel_types: [ChannelType.GuildText],
+                channel_types: [ChannelType.GuildText, ChannelType.GuildAnnouncement],
                 required: true
             
         },

@@ -43,6 +43,11 @@ module.exports = async (client, interaction) => {
     });
     if (!command) return;
 
+    //Economy Res
+    await client.CreateAndUpdate(interaction.guild.id, interaction.user.id) /// Can find this module in Handlers/Functions/Economy.js
+    await client.AuctionCreateAndUpdate(interaction.guild.id)
+    await client.Roulette(interaction.guild.id)
+    await client.Coinflip(interaction.guild.id)
     console.log(
       chalk.bgRed(
         `[COMMAND] ${interaction.user.tag} Used ${command.name.at(-1)} in ${

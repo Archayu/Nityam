@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Collection, RESTEvents, Events } = require("discord.js");
+const { Client, GatewayIntentBits, Collection } = require("discord.js");
 
 
 
@@ -24,14 +24,14 @@ class MainClient extends Client {
     this.color = this.config.EMBED_COLOR;
     this.footer = "Nityam Made With 🚩 By Ayush";
     this.prefix = "/"
-   
+
     
 
     if(!this.token) this.token = this.config.TOKEN;
 
     process.on('unhandledRejection', error => console.log(error));
     process.on('uncaughtException', error => console.log(error));
-
+;
     const client = this;
 
     ["slash", "premiums"].forEach(x => client[x] = new Collection());

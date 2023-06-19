@@ -18,7 +18,7 @@ module.exports = {
       description: "The channel where you want the embed message will be sent.",
       type: 7,
       required: false,
-      channel_types: [ChannelType.GuildText],
+      channel_types: [ChannelType.GuildText, ChannelType.GuildAnnouncement],
     },
   ],
   permissions: {

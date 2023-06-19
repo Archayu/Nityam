@@ -81,7 +81,7 @@ const {
         if(member.roles.highest.position >= interaction.guild.me.roles.highest.position) return interaction.reply({ content: "I can't ban this user", ephemeral: true });
         const reason = interaction.options.getString("reason") || "No reason provided";
         const days = interaction.options.getInteger("days") || 0;
-        await member.ban({ reason, days }).catch((err) => {
+        await member.ban({ reason, deleteMessageSeconds: days }).catch((err) => {
             console.log(err);
             interaction.reply("Something went wrong");
         }) 
