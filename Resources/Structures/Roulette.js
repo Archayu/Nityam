@@ -1,5 +1,5 @@
-const Roulette = require("../settings/models/roulette.js");
-const Member = require("../settings/models/member.js");
+const Roulette = require("../../Models/roulette.js");
+const Member = require("../../Models/member.js");
 
 const giveMoney_2 = async (guildId, player, amount) => {
     const db = await Member.findOne({ guild_id: guildId, user_id: player });

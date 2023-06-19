@@ -14,7 +14,8 @@ class MainClient extends Client {
                 GatewayIntentBits.GuildMessages,
                 GatewayIntentBits.GuildVoiceStates,
                 GatewayIntentBits.MessageContent,
-                GatewayIntentBits.GuildPresences
+                GatewayIntentBits.GuildPresences,
+                GatewayIntentBits.GuildMessageReactions
             ]
         });
 

@@ -18,7 +18,7 @@ const {
   const messagesSchema = require("../../Models/Messages");
   const messageRewards = require("../../Models/MessageReward");
   const { Client } = require("discord.js");
-const DarkAuction = require("../../settings/models/darkauction.js");
+const DarkAuction = require("../../Models/darkauction.js");
 const Member = require("../../Models/member");
 const config = require("../../Resources/Structures/EconomyConfig");
 /**

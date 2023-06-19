@@ -1,5 +1,5 @@
-const Coinflip = require("../settings/models/coinflip.js");
-const Member = require("../settings/models/member.js");
+const Coinflip = require("../../Models/coinflip");
+const Member = require("../../Models/member.js");
 
 const giveMoney = async (guildId, player, amount) => {
     const db = await Member.findOne({ guild_id: guildId, user_id: player });
