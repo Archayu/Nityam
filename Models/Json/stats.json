@@ -29,5 +29,7 @@
     "purge-startswith": 1,
     "purge-endswith": 1,
     "purge-equals": 1,
-    "purge-user": 2
+    "purge-user": 2,
+    "drop": 2,
+    "start": 1
 }

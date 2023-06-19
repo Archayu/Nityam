@@ -34,7 +34,7 @@ module.exports = {
       description: "The channel to start the giveaway in",
       type: ApplicationCommandOptionType.Channel,
       required: true,
-      channel_types: [ChannelType.GuildText, , ChannelType.GuildAnnouncement],
+      channel_types: [ChannelType.GuildText, ChannelType.GuildAnnouncement],
     },
     {
       name: "bonusrole",

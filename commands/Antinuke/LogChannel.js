@@ -9,7 +9,7 @@ module.exports = {
         {
             name: "channel",
             type: ApplicationCommandOptionType.Channel,
-            channel_types: [ChannelType.GuildText, , ChannelType.GuildAnnouncement],
+            channel_types: [ChannelType.GuildText, ChannelType.GuildAnnouncement],
             description: "The channel to set as the log channel.",
             required: true
         }

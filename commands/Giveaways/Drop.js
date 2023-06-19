@@ -41,9 +41,10 @@ const {
       isNSFW: false,
     },
     run: async (interaction, client) => {
+      await interaction.deferReply();
             // If the member doesn't have enough permissions
             if(!interaction.member.permissions.has('ManageMessages') && !interaction.member.roles.cache.some((r) => r.name === "Giveaways")){
-                return interaction.reply({
+                return interaction.editReply({
                     content: ':x: You need to have the manage messages permissions to start giveaways.',
                     ephemeral: true
                 });
@@ -54,13 +55,13 @@ const {
             const giveawayPrize = interaction.options.getString('prize');
           
         if (!giveawayChannel.isTextBased()) {
-          return interaction.reply({
+          return interaction.editReply({
             content: ':x: Please select a text channel!',
             ephemeral: true
           });
         }   
         if (giveawayWinnerCount < 1) {
-          return interaction.reply({
+          return interaction.editReply({
             content: ':x: Please select a valid winner count! greater or equal to one.',
           })
         }
@@ -79,7 +80,7 @@ const {
                 messages
             });
     
-            interaction.reply(`Giveaway started in ${giveawayChannel}!`);
+            interaction.editReply(`Giveaway started in ${giveawayChannel}!`);
     },
   };
   

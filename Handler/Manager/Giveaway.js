@@ -2,7 +2,7 @@ const { GiveawaysManager } = require("discord-giveaways")
 const { readdirSync } = require("fs")
 module.exports = async (client) =>  {
     client.giveawaysManager = new GiveawaysManager(client, {
-  storage: "./Resources/Database/Giveaway.json",
+  storage: "./Models/Json/Giveaway.json",
   default: {
     botsCanWin: false,
     embedColor: "Orange",

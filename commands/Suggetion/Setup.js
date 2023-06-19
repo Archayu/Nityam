@@ -17,7 +17,7 @@ const {
             type: ApplicationCommandOptionType.Channel,
             description: "channel in which you want to setup suggestion",
             required: true,
-            channel_types: [ChannelType.GuildText, , ChannelType.GuildAnnouncement],
+            channel_types: [ChannelType.GuildText,ChannelType.GuildAnnouncement],
         }
     ],
     permissions: {
