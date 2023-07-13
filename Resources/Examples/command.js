@@ -22,13 +22,12 @@ module.exports = {
     inVoice: false,
     isNSFW: false,
     sameVoice: false,
-    isPlayer: false,
   },
       /**
      * @param {CommandInteraction} interaction
      * @param {client} client   
      */
-  run: async (interaction, client, player) => {
+  run: async (interaction, client) => {
 
   },
 };

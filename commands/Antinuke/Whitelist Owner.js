@@ -1,6 +1,5 @@
 const { EmbedBuilder, ApplicationCommandOptionType } = require("discord.js");
-const GuildSettings = require("../../Models/Antinuke"); 
-
+const GuildSettings = require("../../Models/Antinuke");
 
 module.exports = {
   name: ["antinuke", "whitelist", "owner"],
@@ -20,12 +19,14 @@ module.exports = {
       type: ApplicationCommandOptionType.String,
       choices: [
         {
-            name: "Add", value: "add"
+          name: "Add",
+          value: "add",
         },
         {
-            name: "Remove", value: "remove"
-        }
-      ]
+          name: "Remove",
+          value: "remove",
+        },
+      ],
     },
   ],
   permissions: {
@@ -35,44 +36,66 @@ module.exports = {
   },
   settings: {
     isPremium: false,
-    isPlayer: false,
+
     isOwner: false,
     inVoice: false,
     sameVoice: false,
   },
   run: async (interaction, client) => {
-
-   await interaction.deferReply();
-    if(interaction.user.id !== interaction.guild.ownerId){
-        interaction.editReply({ content: `You Are Not Owner Of This Guild`, ephemeral: true });
+    await interaction.deferReply();
+    if (interaction.user.id !== interaction.guild.ownerId) {
+      interaction.editReply({
+        content: `You Are Not Owner Of This Guild`,
+        ephemeral: true,
+      });
     }
 
-
-
-    const guildSettings = await GuildSettings.findOne({ guildId: interaction.guild.id });
+    const guildSettings = await GuildSettings.findOne({
+      guildId: interaction.guild.id,
+    });
     if (!guildSettings) {
-        return interaction.editReply({ content: 'Something went wrong. Could not find guild settings.', ephemeral: true });
-    };
-    const userOption = interaction.options.getUser('user');
-        if (guildSettings.ownerLevel.includes(userOption.id) && interaction.options.getString('choice') === 'add') {
-            return interaction.editReply({ content: 'This user is already in the owner level list.', ephemeral: true });
-        }
+      return interaction.editReply({
+        content: "Something went wrong. Could not find guild settings.",
+        ephemeral: true,
+      });
+    }
+    const userOption = interaction.options.getUser("user");
+    if (
+      guildSettings.ownerLevel.includes(userOption.id) &&
+      interaction.options.getString("choice") === "add"
+    ) {
+      return interaction.editReply({
+        content: "This user is already in the owner level list.",
+        ephemeral: true,
+      });
+    }
 
-        if (!guildSettings.ownerLevel.includes(userOption.id) && interaction.options.getString('choice') === 'remove') {
-            return interaction.editReply({ content: 'This user is not in the owner level list.', ephemeral: true });
-        }
+    if (
+      !guildSettings.ownerLevel.includes(userOption.id) &&
+      interaction.options.getString("choice") === "remove"
+    ) {
+      return interaction.editReply({
+        content: "This user is not in the owner level list.",
+        ephemeral: true,
+      });
+    }
 
-        if (interaction.options.getString('choice') === 'add') {
-            guildSettings.ownerLevel.push(userOption.id);
-            await guildSettings.save();
-            return interaction.editReply({ content: `${userOption} has been added to the owner level list.`, ephemeral: true });
-        } else {
-            guildSettings.ownerLevel = guildSettings.ownerLevel.filter(userId => userId !== userOption.id);
-            await guildSettings.save();
-            return interaction.editReply({ content: `${userOption} has been removed from the owner level list.`, ephemeral: true });
-        }
-
-
-
+    if (interaction.options.getString("choice") === "add") {
+      guildSettings.ownerLevel.push(userOption.id);
+      await guildSettings.save();
+      return interaction.editReply({
+        content: `${userOption} has been added to the owner level list.`,
+        ephemeral: true,
+      });
+    } else {
+      guildSettings.ownerLevel = guildSettings.ownerLevel.filter(
+        (userId) => userId !== userOption.id
+      );
+      await guildSettings.save();
+      return interaction.editReply({
+        content: `${userOption} has been removed from the owner level list.`,
+        ephemeral: true,
+      });
+    }
   },
 };

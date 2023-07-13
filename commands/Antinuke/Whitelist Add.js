@@ -52,7 +52,7 @@ module.exports = {
   },
   settings: {
     isPremium: false,
-    isPlayer: false,
+
     isOwner: false,
     inVoice: false,
     sameVoice: false,
@@ -118,40 +118,43 @@ module.exports = {
 
       if (logChannel) {
         const Anti = {
-      roles: "AntiRole",
-      channels: "AntiChannel ",
-      webhooks: "AntiWebhook",
-      kicks: "AntiKick",
-      bans: "AntiBan",
-      antibot: "AntiBots Add",
-    };
+          roles: "AntiRole",
+          channels: "AntiChannel ",
+          webhooks: "AntiWebhook",
+          kicks: "AntiKick",
+          bans: "AntiBan",
+          antibot: "AntiBots Add",
+        };
 
         logChannel.send({
-         embeds: [
-          new EmbedBuilder()
-          .setColor(client.color)
-          .setAuthor({ name: client.user.username, iconURL: client.user.displayAvatarURL()})
-          .addFields(
-            {
-              name: "Category",
-              value: `> ${Anti[category]}`,
-            },
-            {
-              name: "Log Type",
-              value: "> Whitelist Add"
-            },
-            {
-              name: "Added By",
-              value: `> <@${interaction.user.id}>`
-            },
-            {
-              name: "User Added",
-              value: `> ${user1}`
-            }
-          )
-          .setFooter({ text: `© Nityam Antinuke Logs`})
-          .setTimestamp(),
-         ]
+          embeds: [
+            new EmbedBuilder()
+              .setColor(client.color)
+              .setAuthor({
+                name: client.user.username,
+                iconURL: client.user.displayAvatarURL(),
+              })
+              .addFields(
+                {
+                  name: "Category",
+                  value: `> ${Anti[category]}`,
+                },
+                {
+                  name: "Log Type",
+                  value: "> Whitelist Add",
+                },
+                {
+                  name: "Added By",
+                  value: `> <@${interaction.user.id}>`,
+                },
+                {
+                  name: "User Added",
+                  value: `> ${user1}`,
+                }
+              )
+              .setFooter({ text: `© Nityam Antinuke Logs` })
+              .setTimestamp(),
+          ],
         });
       }
 

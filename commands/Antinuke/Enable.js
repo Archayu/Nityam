@@ -1,4 +1,8 @@
-const { EmbedBuilder, ApplicationCommandOptionType, PermissionFlagsBits } = require("discord.js");
+const {
+  EmbedBuilder,
+  ApplicationCommandOptionType,
+  PermissionFlagsBits,
+} = require("discord.js");
 const GuildSettings = require("../../Models/Antinuke");
 
 module.exports = {
@@ -50,20 +54,26 @@ module.exports = {
   },
   settings: {
     isPremium: false,
-    isPlayer: false,
     isOwner: false,
     inVoice: false,
     sameVoice: false,
   },
   run: async (interaction, client) => {
-    if(!interaction.guild.me.permissions.has(PermissionFlagsBits.Administrator)) interaction .channel.send({
-      content: "**Warning**: I Don't Have Administrator Permission, Please Gimme Perms Of Administrator"
-    })
+    if (
+      !interaction.guild.me.permissions.has(PermissionFlagsBits.Administrator)
+    )
+      interaction.channel.send({
+        content:
+          "**Warning**: I Don't Have Administrator Permission, Please Gimme Perms Of Administrator",
+      });
     await interaction.deferReply();
 
-    if(interaction.user.id !== interaction.guild.ownerId){
-      interaction.editReply({ content: `You Are Not Owner Of This Guild`, ephemeral: true });
-  }
+    if (interaction.user.id !== interaction.guild.ownerId) {
+      interaction.editReply({
+        content: `You Are Not Owner Of This Guild`,
+        ephemeral: true,
+      });
+    }
 
     const category = interaction.options.getString("category");
 
@@ -120,18 +130,20 @@ module.exports = {
         await settings.save();
 
         const Anti = {
-      roles: "AntiRole",
-      channels: "AntiChannel ",
-      webhooks: "AntiWebhook",
-      kicks: "AntiKick",
-      bans: "AntiBan",
-      antibot: "AntiBots Add",
-    };
+          roles: "AntiRole",
+          channels: "AntiChannel ",
+          webhooks: "AntiWebhook",
+          kicks: "AntiKick",
+          bans: "AntiBan",
+          antibot: "AntiBots Add",
+        };
 
         interaction.editReply({
           embeds: [
             new EmbedBuilder()
-              .setDescription(`${Anti[category]} <:Enabled:1121706856189014086>`)
+              .setDescription(
+                `${Anti[category]} <:Enabled:1121706856189014086>`
+              )
               .setColor(client.color)
               .setTimestamp(),
           ],

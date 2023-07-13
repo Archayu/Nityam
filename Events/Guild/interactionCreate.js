@@ -87,16 +87,7 @@ module.exports = async (client, interaction) => {
         ephemeral: true,
       });
 
-    const player = client.music.players.get(interaction.guildId)
-
-    //check in voice channel
-    if (command.settings.isPlayer) {
-      if (!player)
-        return interaction.reply({
-          content: `No Song Is Playing in The Guild Right Now`,
-         ephemeral: true,
-        });
-      }
+ 
 
     const { channel } = interaction.member.voice;
     //check in voice channel

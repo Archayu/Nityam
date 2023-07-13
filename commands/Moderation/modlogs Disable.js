@@ -23,7 +23,6 @@ module.exports = {
     inVoice: false,
     isNSFW: false,
     sameVoice: false,
-    isPlayer: false,
   },
   /**
    * @param {CommandInteraction} interaction

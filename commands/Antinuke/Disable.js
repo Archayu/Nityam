@@ -50,7 +50,7 @@ module.exports = {
   },
   settings: {
     isPremium: false,
-    isPlayer: false,
+
     isOwner: false,
     inVoice: false,
     sameVoice: false,
@@ -58,17 +58,22 @@ module.exports = {
   run: async (interaction, client) => {
     await interaction.deferReply();
 
-    if(interaction.user.id !== interaction.guild.ownerId){
-      interaction.editReply({ content: `You Are Not Owner Of This Guild`, ephemeral: true });
-  }
+    if (interaction.user.id !== interaction.guild.ownerId) {
+      interaction.editReply({
+        content: `You Are Not Owner Of This Guild`,
+        ephemeral: true,
+      });
+    }
 
     const category = interaction.options.getString("category");
-   
 
-
-
-    let settings = await GuildSettings.findOne({ guildId: interaction.guild.id });
-    if (!settings) return interaction.editReply({ content: "Antinuke Is Not Enabled In This Guild"})
+    let settings = await GuildSettings.findOne({
+      guildId: interaction.guild.id,
+    });
+    if (!settings)
+      return interaction.editReply({
+        content: "Antinuke Is Not Enabled In This Guild",
+      });
 
     if (category === "all") {
       settings.enabled.roles = false;
@@ -101,42 +106,39 @@ module.exports = {
         ],
       });
     } else {
-
-      if(settings.enabled[category] === false) {
-
-        interaction.editReply({ 
+      if (settings.enabled[category] === false) {
+        interaction.editReply({
           embeds: [
             new EmbedBuilder()
-            .setDescription(`That Category Is not enabled`)
-            .setColor("Red")
-            .setTimestamp(),
+              .setDescription(`That Category Is not enabled`)
+              .setColor("Red")
+              .setTimestamp(),
           ],
-          ephemeral: true
-        })
-
+          ephemeral: true,
+        });
       } else {
+        settings.enabled[category] = true;
+        await settings.save();
 
-    settings.enabled[category] = true;
-    await settings.save();
+        const Anti = {
+          roles: "AntiRole Create/Delete",
+          channels: "AntiChannel Create/Delete",
+          webhooks: "AntiWebhook Create/Delete/Update",
+          kicks: "AntiKick",
+          bans: "AntiBan",
+          antibot: "AntiBots Add",
+        };
 
-    const Anti = {
-      roles: "AntiRole Create/Delete",
-      channels: "AntiChannel Create/Delete",
-      webhooks: "AntiWebhook Create/Delete/Update",
-      kicks: "AntiKick",
-      bans: "AntiBan",
-      antibot: "AntiBots Add",
-    };
-
-    interaction.editReply({
-      embeds: [
-        new EmbedBuilder()
-          .setDescription(`${Anti[category]}<:disabled:1121707326529875978>`)
-          .setColor(client.color),
-      ],
-    });
-
-  }
-  }
+        interaction.editReply({
+          embeds: [
+            new EmbedBuilder()
+              .setDescription(
+                `${Anti[category]}<:disabled:1121707326529875978>`
+              )
+              .setColor(client.color),
+          ],
+        });
+      }
+    }
   },
 };

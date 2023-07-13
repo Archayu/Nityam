@@ -1,68 +1,71 @@
-const { EmbedBuilder, ApplicationCommandOptionType, ChannelType} = require('discord.js');
-const GuildSettings = require("../../Models/Antinuke")
+const {
+  EmbedBuilder,
+  ApplicationCommandOptionType,
+  ChannelType,
+} = require("discord.js");
+const GuildSettings = require("../../Models/Antinuke");
 
 module.exports = {
-    name: ["antinuke", "channel"],
-    description: "Set the log channel for all antinuke categories.",
-    category: "Antinuke",
-    options: [
-        {
-            name: "channel",
-            type: ApplicationCommandOptionType.Channel,
-            channel_types: [ChannelType.GuildText, ChannelType.GuildAnnouncement],
-            description: "The channel to set as the log channel.",
-            required: true
-        }
-    ],
-    permissions: {
-        channel: [],
-        bot: [],
-        user: []
+  name: ["antinuke", "channel"],
+  description: "Set the log channel for all antinuke categories.",
+  category: "Antinuke",
+  options: [
+    {
+      name: "channel",
+      type: ApplicationCommandOptionType.Channel,
+      channel_types: [ChannelType.GuildText, ChannelType.GuildAnnouncement],
+      description: "The channel to set as the log channel.",
+      required: true,
     },
-    settings: {
-        isPremium: false,
-        isPlayer: false,
-        isOwner: false,
-        inVoice: false,
-        sameVoice: false,
-    },
-    run: async (interaction, client) => {
-      await interaction.deferReply();
+  ],
+  permissions: {
+    channel: [],
+    bot: [],
+    user: [],
+  },
+  settings: {
+    isPremium: false,
 
-    
-      const ow = await GuildSettings.findOne({ guildId: interaction.guild.id });
-  
-      const isOwner = interaction.user.id === interaction.guild.ownerId;
-      const isOwnerLevel = ow.ownerLevel.includes(interaction.user.id);
-  
-      if (!isOwner && !isOwnerLevel) {
-        return   interaction.editReply({
-          embeds: [
-            new EmbedBuilder()
-              .setDescription("‼ This Command Is Only For Guild Owner And The Users That Have Access To ownerLevel")
-              .setColor(client.color),
-          ],
-        });
-      
-      }
-          const guildId = interaction.guildId;
-          const logChannel = interaction.options.getChannel('channel');
+    isOwner: false,
+    inVoice: false,
+    sameVoice: false,
+  },
+  run: async (interaction, client) => {
+    await interaction.deferReply();
 
+    const ow = await GuildSettings.findOne({ guildId: interaction.guild.id });
 
-          const guildSettings = await GuildSettings.findOne({ guildId: guildId });
-          if (!guildSettings) {
-            return interaction.editReply({
-              content: 'Antinuke is not enabled in this guild. Please enable it first.',
-              ephemeral: true,
-            });
-          }
+    const isOwner = interaction.user.id === interaction.guild.ownerId;
+    const isOwnerLevel = ow.ownerLevel.includes(interaction.user.id);
 
-          guildSettings.logChannel = logChannel.id;
-          await guildSettings.save();
+    if (!isOwner && !isOwnerLevel) {
+      return interaction.editReply({
+        embeds: [
+          new EmbedBuilder()
+            .setDescription(
+              "‼ This Command Is Only For Guild Owner And The Users That Have Access To ownerLevel"
+            )
+            .setColor(client.color),
+        ],
+      });
+    }
+    const guildId = interaction.guildId;
+    const logChannel = interaction.options.getChannel("channel");
 
-          interaction.editReply({ content: `Log Channel Has Been Set To <#${logChannel.id}>` });
-
-
+    const guildSettings = await GuildSettings.findOne({ guildId: guildId });
+    if (!guildSettings) {
+      return interaction.editReply({
+        content:
+          "Antinuke is not enabled in this guild. Please enable it first.",
+        ephemeral: true,
+      });
     }
 
-}
+    guildSettings.logChannel = logChannel.id;
+    await guildSettings.save();
+
+    interaction.editReply({
+      content: `Log Channel Has Been Set To <#${logChannel.id}>`,
+    });
+  },
+};
