@@ -12,6 +12,12 @@ const {
     category: "Moderation",
     options: [
         {
+            name: "reason",
+            description: "reason for lockdown",
+            type: ApplicationCommandOptionType.String,
+            required: true
+        },
+        {
             name: "ignored-channel",
             description: "channels to ignore",
             type: ApplicationCommandOptionType.Channel,
@@ -63,6 +69,7 @@ const {
             ephemeral: true,
         });
 
+        const reason = interaction.options.getString("reason")
         const ignoredChannel = interaction.options.getChannel("ignored-channel") || "0";
         const ignoredChannel2 = interaction.options.getChannel("ignored-channel-2") || "0";
         const ignoredChannel3 = interaction.options.getChannel("ignored-channel-3") || "0";
@@ -127,6 +134,15 @@ const {
             }
         }
         );
+
+        client.modLogs({ interaction, reason, fields: [
+            {
+                name: "Action",
+                value: "LockDown",
+                inline: true
+            },
+            
+        ]})
 
 
     },

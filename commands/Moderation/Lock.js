@@ -49,6 +49,18 @@ const {
             ]
         })
 
+        client.modLogs({ interaction, reason: "Not Required", fields: [
+            {
+                name: "Action",
+                value: "Channel Locked",
+                inline: true
+            },
+            {
+                name: "Target",
+                value: `${channel}`
+            }
+        ]})
+
      
     },
   };

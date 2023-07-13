@@ -14,6 +14,12 @@ const {
             type: ApplicationCommandOptionType.String,
             required: true,
         },
+        {
+          name: "reason",
+          description: "Why You Are Unbanning That User",
+          type: ApplicationCommandOptionType.String,
+          required: false
+        }
     ],
     permissions: {
       channel: [],
@@ -28,6 +34,7 @@ const {
     },
     run: async (interaction, client) => {
         await interaction.deferReply();
+        const reason = interaction.options.getString("reason") || "Not Provided"
         const userid = interaction.options.getString("userid");
         const bannnedUsers = await interaction.guild.bans.fetch();
         const bannedUser = bannnedUsers.find(user => user.user.id === userid);
@@ -38,6 +45,18 @@ const {
         }   
 
         );
+
+        client.modLogs({ interaction, reason, fields: [
+          {
+              name: "Action",
+              value: "Unban",
+              inline: true
+          },
+          {
+              name: "Target",
+              value: `${userid}`
+          }
+      ]})
     },
   };
   

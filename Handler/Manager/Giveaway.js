@@ -6,7 +6,7 @@ module.exports = async (client) =>  {
   default: {
     botsCanWin: false,
     embedColor: "Orange",
-    reaction: "🎁",
+    reaction: "<:giveaway:1121648850864717874>",
     lastChance: {
       enabled: true,
       content: `** Join Fast It Is Your Last Chance! **`,

@@ -60,7 +60,7 @@ const {
             text: `Added **${amount}** invites to ${user}`,
             fields: [
                 {
-                    name: "➕︙Total Real Invites",
+                    name: "<:info:1121649249071927469>︙Total Real Invites",
                     value: `${data.Invites}`,
                     inline: true,
                 }

@@ -38,6 +38,18 @@ const {
             content: `Unlocked ${channel}`,
             ephemeral: true,
         });
+
+        client.modLogs({ interaction, reason: "Not Required", fields: [
+          {
+              name: "Action",
+              value: "Channel Unlock",
+              inline: true
+          },
+          {
+              name: "Target",
+              value: `${channel}`
+          }
+      ]})
         
     },
   };

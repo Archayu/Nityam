@@ -1,1 +1,84 @@
-[{"messageId":"1120217274461204541","channelId":"1078842444411576400","guildId":"1078842443958583388","startAt":1687151010373,"endAt":1687151120067,"ended":true,"winnerCount":1,"prize":"nothing","messages":{"giveaway":"🎉 **GIVEAWAY** 🎉","giveawayEnded":"🎉 **GIVEAWAY ENDED** 🎉","title":"{this.prize}","inviteToParticipate":"React with 🎉 to participate!","winMessage":"Congratulations, {winners}! You won **{this.prize}**!","drawing":"Ends: **{timestamp}**","dropMessage":"Be the first to react with 🎉 !","embedFooter":"{this.winnerCount} winner(s)","noWinner":"Giveaway cancelled, no valid participations.","winners":"winner(s)","endedAt":"Ended at","hostedBy":"Hosted by: {this.hostedBy}"},"hostedBy":"<@1078841743501447259>","winnerIds":["1078841743501447259"],"isDrop":true},{"messageId":"1120217745842249740","channelId":"1078842444411576400","guildId":"1078842443958583388","startAt":1687151122511,"endAt":1687151126798,"ended":true,"winnerCount":1,"prize":"ib","messages":{"giveaway":"🎉 **GIVEAWAY** 🎉","giveawayEnded":"🎉 **GIVEAWAY ENDED** 🎉","title":"{this.prize}","inviteToParticipate":"React with 🎉 to participate!","winMessage":"Congratulations, {winners}! You won **{this.prize}**!","drawing":"Ends: **{timestamp}**","dropMessage":"Be the first to react with 🎉 !","embedFooter":"{this.winnerCount} winner(s)","noWinner":"Giveaway cancelled, no valid participations.","winners":"winner(s)","endedAt":"Ended at","hostedBy":"Hosted by: {this.hostedBy}"},"hostedBy":"<@1078841743501447259>","winnerIds":["1078841743501447259"],"isDrop":true},{"messageId":"1120218220540993627","channelId":"1078842444411576400","guildId":"1078842443958583388","startAt":1687151235640,"endAt":1687151355640,"ended":true,"winnerCount":1,"prize":"enhnnh","messages":{"giveaway":"🎉 **GIVEAWAY** 🎉","giveawayEnded":"🎉 **GIVEAWAY ENDED** 🎉","title":"{this.prize}","inviteToParticipate":"**React with 🎉 to participate!**\n>>> - Only members having <@&1106172019235635292> are allowed to participate in this giveaway!","winMessage":"Congratulations, {winners}! You won **{this.prize}**!","drawing":"Ends: **{timestamp}**","dropMessage":"Be the first to react with 🎉 !","embedFooter":"{this.winnerCount} winner(s)","noWinner":"Giveaway cancelled, no valid participations.","winners":"winner(s)","endedAt":"Ended at","hostedBy":"Hosted by: {this.hostedBy}"},"hostedBy":"<@1078841743501447259>","bonusEntries":"[{\"bonus\":function anonymous(member\n) {\nreturn member.roles.cache.some((r) => r.name === 'undefined') ? null : null\n},\"cumulative\":false}]","winnerIds":["1078841743501447259"],"extraData":{"server":"null","role":"1106172019235635292"}}]
+[
+  {
+    "messageId": "1120217274461204541",
+    "channelId": "1078842444411576400",
+    "guildId": "1078842443958583388",
+    "startAt": 1687151010373,
+    "endAt": 1687151120067,
+    "ended": true,
+    "winnerCount": 1,
+    "prize": "nothing",
+    "messages": {
+      "giveaway": "🎉 **GIVEAWAY** 🎉",
+      "giveawayEnded": "🎉 **GIVEAWAY ENDED** 🎉",
+      "title": "{this.prize}",
+      "inviteToParticipate": "React with 🎉 to participate!",
+      "winMessage": "Congratulations, {winners}! You won **{this.prize}**!",
+      "drawing": "Ends: **{timestamp}**",
+      "dropMessage": "Be the first to react with 🎉 !",
+      "embedFooter": "{this.winnerCount} winner(s)",
+      "noWinner": "Giveaway cancelled, no valid participations.",
+      "winners": "winner(s)",
+      "endedAt": "Ended at",
+      "hostedBy": "Hosted by: {this.hostedBy}"
+    },
+    "hostedBy": "<@1078841743501447259>",
+    "winnerIds": ["1078841743501447259"],
+    "isDrop": true
+  },
+  {
+    "messageId": "1120217745842249740",
+    "channelId": "1078842444411576400",
+    "guildId": "1078842443958583388",
+    "startAt": 1687151122511,
+    "endAt": 1687151126798,
+    "ended": true,
+    "winnerCount": 1,
+    "prize": "ib",
+    "messages": {
+      "giveaway": "🎉 **GIVEAWAY** 🎉",
+      "giveawayEnded": "🎉 **GIVEAWAY ENDED** 🎉",
+      "title": "{this.prize}",
+      "inviteToParticipate": "React with 🎉 to participate!",
+      "winMessage": "Congratulations, {winners}! You won **{this.prize}**!",
+      "drawing": "Ends: **{timestamp}**",
+      "dropMessage": "Be the first to react with 🎉 !",
+      "embedFooter": "{this.winnerCount} winner(s)",
+      "noWinner": "Giveaway cancelled, no valid participations.",
+      "winners": "winner(s)",
+      "endedAt": "Ended at",
+      "hostedBy": "Hosted by: {this.hostedBy}"
+    },
+    "hostedBy": "<@1078841743501447259>",
+    "winnerIds": ["1078841743501447259"],
+    "isDrop": true
+  },
+  {
+    "messageId": "1120218220540993627",
+    "channelId": "1078842444411576400",
+    "guildId": "1078842443958583388",
+    "startAt": 1687151235640,
+    "endAt": 1687151355640,
+    "ended": true,
+    "winnerCount": 1,
+    "prize": "enhnnh",
+    "messages": {
+      "giveaway": "🎉 **GIVEAWAY** 🎉",
+      "giveawayEnded": "🎉 **GIVEAWAY ENDED** 🎉",
+      "title": "{this.prize}",
+      "inviteToParticipate": "**React with 🎉 to participate!**\n>>> - Only members having <@&1106172019235635292> are allowed to participate in this giveaway!",
+      "winMessage": "Congratulations, {winners}! You won **{this.prize}**!",
+      "drawing": "Ends: **{timestamp}**",
+      "dropMessage": "Be the first to react with 🎉 !",
+      "embedFooter": "{this.winnerCount} winner(s)",
+      "noWinner": "Giveaway cancelled, no valid participations.",
+      "winners": "winner(s)",
+      "endedAt": "Ended at",
+      "hostedBy": "Hosted by: {this.hostedBy}"
+    },
+    "hostedBy": "<@1078841743501447259>",
+    "bonusEntries": "[{\"bonus\":function anonymous(member\n) {\nreturn member.roles.cache.some((r) => r.name === 'undefined') ? null : null\n},\"cumulative\":false}]",
+    "winnerIds": ["1078841743501447259"],
+    "extraData": { "server": "null", "role": "1106172019235635292" }
+  }
+]

@@ -59,7 +59,7 @@ collector.on('collect', async (interaction) => {
 
         await message.edit({ content: "Reseted All Invites Of The Guild", embeds: [], components: []})
     } else {
-        return await  message.edit({ content: "Action Cacelled", embeds: [], components: []})
+        return await  message.edit({ content: "Action Arborted", embeds: [], components: []})
     }
 
 })

@@ -8,7 +8,7 @@ function numberWithCommas(x) {
 }
 
 module.exports = {
-    name: ["economy", "work"],
+    name: ["economy","work"],
     description: "work to get money",
     category: "Economy",
     options: [],

@@ -1,7 +1,14 @@
 const {
-  PermissionsBitField, InteractionType, PermissionFlagsBits
+  PermissionsBitField, InteractionType, PermissionFlagsBits, CommandInteraction
 } = require("discord.js");
 const chalk = require("chalk");
+const  client  = require("../../bot")
+/**
+ * 
+ * @param {client} client 
+ * @param {CommandInteraction} interaction 
+ * @returns 
+ */
 module.exports = async (client, interaction) => {
 //=================================== Command Interaction =====================================\\
   if (
@@ -11,8 +18,6 @@ module.exports = async (client, interaction) => {
   ) {
     if (!interaction.guild || interaction.user.bot) return;
 
-    await client.createExSetup(interaction);
-    await client.createExVoice(interaction);
     const user = client.premiums.get(interaction.user.id);
 
     let subCommandName = "";
@@ -23,6 +28,8 @@ module.exports = async (client, interaction) => {
     try {
       subCommandGroupName = interaction.options.getSubcommandGroup();
     } catch {}
+
+   
 
     const command = client.slash.find((command) => {
       switch (command.name.length) {
@@ -80,6 +87,16 @@ module.exports = async (client, interaction) => {
         ephemeral: true,
       });
 
+    const player = client.music.players.get(interaction.guildId)
+
+    //check in voice channel
+    if (command.settings.isPlayer) {
+      if (!player)
+        return interaction.reply({
+          content: `No Song Is Playing in The Guild Right Now`,
+         ephemeral: true,
+        });
+      }
 
     const { channel } = interaction.member.voice;
     //check in voice channel
@@ -100,6 +117,16 @@ module.exports = async (client, interaction) => {
           content: `I Don't have permission \`${command.permissions.bot.join(", ")}\``,
           ephemeral: true,
         });
+      }
+    }
+
+  
+    //same voice
+    if (command.settings.sameVoice) {
+      if (interaction.guild.members.me.voice.channel) {
+        if (interaction.guild.members.me.voice.channel.id !== channel.id) {
+          return interaction.reply({ content: `You need to be in a same/voice channel.`, ephemeral: true });
+        }
       }
     }
 
@@ -145,8 +172,7 @@ module.exports = async (client, interaction) => {
 
     if (command) {
       try {
-        client.addCount(command.name.at(-1));
-        command.run(interaction,  client);
+        command.run(interaction,  client, player);
       } catch (error) {
         await interaction.reply({
           content: `This Slash Command Is Not Registered And Hence Not Supported`,

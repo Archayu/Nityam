@@ -46,6 +46,17 @@ const {
         }
         );
         interaction.reply({ content: `Set slowmode to ${time} in ${channel}`, ephemeral: true });
+        client.modLogs({ interaction, reason: "Not Required", fields: [
+          {
+              name: "Action",
+              value: "SlowMode",
+              inline: true
+          },
+          {
+              name: "Target",
+              value: `${channel}`
+          }
+      ]})
         
     },
   };

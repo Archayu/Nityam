@@ -31,8 +31,8 @@ const {
                 inline: true,
             },
             {
-                name: "🏷︙Discord tag",
-                value: `Aayu#0552`,
+                name: "🏷︙Username",
+                value: `aayu0552`,
                 inline: true,
             },
             {

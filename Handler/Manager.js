@@ -5,7 +5,7 @@ module.exports = (client) => {
   require("./Manager/InteractionCreate.js")(client);
   require("./Manager/Purger.js")(client);
   require("./Manager/Giveaway.js")(client);
-  
+  require(`./Manager/Music.js`)(client);
   console.log(
     white("[") +
       green("INFO") +
@@ -41,5 +41,4 @@ module.exports = (client) => {
       white("Giveaway") +
       green(" Loaded!")
   );
-
 };

@@ -57,7 +57,7 @@ module.exports = {
     inVoice: false,
     sameVoice: false,
   },
-  run: async (interaction, client, user, language) => {
+  run: async (interaction, client) => {
     await interaction.deferReply({ ephemeral: true });
     const ow = await GuildSettings.findOne({ guildId: interaction.guild.id });
     const isOwner = interaction.user.id === interaction.guild.ownerId;

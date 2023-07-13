@@ -23,7 +23,7 @@ module.exports = {
 
        const data = await GuildSettings.findOne({ guildId: interaction.guild.id });
        if(!data) { interaction.editReply({ content: `No Data Found`, ephemeral: true});} else {
-        const emoji = { true: "<:enable:1087674705726668863>", false: "<:disabled:1087683956197031976>"}
+        const emoji = { true: "<:Enabled:1121706856189014086>", false: "<:disabled:1121707326529875978>"}
 
 
         interaction.editReply({ embeds: [

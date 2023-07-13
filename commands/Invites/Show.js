@@ -35,7 +35,7 @@ const {
     invites.findOne({ Guild: interaction.guild.id, User: user.id }, async (err, data) => {
         if (data) {
             client.embed({
-                title: "➕・Invites",
+                title: "<:info:1121649249071927469>・Invites",
                 desc: `**${user.tag}** has \`${data.Invites}\` invites (Fakes And Rejoins Are Not Included)`,
                 fields: [
                     {

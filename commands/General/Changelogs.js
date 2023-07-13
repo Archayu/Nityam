@@ -27,7 +27,7 @@ const {
             thumbnail: client.user.displayAvatarURL({ size: 1024 }),
             fields: [{
                     name: "📢︙Alert!",
-                    value: 'no change logs found',
+                    value: 'Added Music System, Economy Sytem with clan',
                     inline: false,
                 },
             ],

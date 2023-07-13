@@ -46,7 +46,7 @@ require("moment-duration-format");
                     thumbnail: client.user.displayAvatarURL({ size: 1024 }),
                     fields: [
                    {
-                        name: "ℹ️︙Information",
+                        name: "<:info:1121649249071927469>︙Information",
                         value: `Nityam is a bot with which you can run your entire server! With no less than 100+ commands, we have a large bot with many options to improve your server!`,
                         inline: false,
                     },
@@ -56,7 +56,7 @@ require("moment-duration-format");
                         inline: false,
                     },
                     {
-                        name: "🤖︙Bot name",
+                        name: "<:discord_bot:1121649084604874842>︙Bot name",
                         value: `${client.user.username}`,
                         inline: true,
                     },
@@ -91,7 +91,7 @@ require("moment-duration-format");
                         inline: true,
                     },
                     {
-                        name: "👥︙Members",
+                        name: "<:members:1121649832667385908>︙Members",
                         value: `\`${totalMembers}\` members`,
                         inline: true,
                     },

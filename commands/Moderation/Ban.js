@@ -85,7 +85,23 @@ const {
             console.log(err);
             interaction.reply("Something went wrong");
         }) 
-        interaction.reply({ content: `Banned ${user.tag} for ${reason}`,});
+        interaction.reply({ content: `<:ban:1121649320509325393> Banned ${user.tag} for ${reason}`,});
+
+       
+        
+        
+        
+        client.modLogs({ interaction, reason, fields: [
+            {
+                name: "Action",
+                value: "Ban",
+                inline: true
+            },
+            {
+                name: "Target",
+                value: `${user.username}`
+            }
+        ]})
 
     },
   };

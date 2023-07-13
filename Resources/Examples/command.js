@@ -2,9 +2,10 @@ const {
   ApplicationCommandOptionType,
   ChannelType,
   EmbedBuilder,
-  CommandInteraction,
-  Client
+  CommandInteraction
 } = require("discord.js");
+const  client  = require("../../bot")
+
 module.exports = {
   name: [""],
   description: "",
@@ -20,10 +21,14 @@ module.exports = {
     isOwner: false,
     inVoice: false,
     isNSFW: false,
+    sameVoice: false,
+    isPlayer: false,
   },
       /**
      * @param {CommandInteraction} interaction
-     * @param {Client} client   
+     * @param {client} client   
      */
-  run: async (interaction, client) => {},
+  run: async (interaction, client, player) => {
+
+  },
 };

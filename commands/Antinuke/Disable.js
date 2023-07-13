@@ -55,7 +55,7 @@ module.exports = {
     inVoice: false,
     sameVoice: false,
   },
-  run: async (interaction, client, user, language) => {
+  run: async (interaction, client) => {
     await interaction.deferReply();
 
     if(interaction.user.id !== interaction.guild.ownerId){
@@ -83,15 +83,15 @@ module.exports = {
       interaction.editReply({
         embeds: [
           new EmbedBuilder()
-            .setTitle("<a:antinuke:1087674015352623194> Antinuke Settings")
+            .setTitle("<:antinuke:1121649987009384519> Antinuke Settings")
             .setDescription(
               `
-        AntiRole Create/Delete:    <:disabled:1087683956197031976>,\n
-        AntiChannel Create/Delete: <:disabled:1087683956197031976>,\n
-        AntiWebhook Create/Delete: <:disabled:1087683956197031976>\n
-        AntiKick:                  <:disabled:1087683956197031976>\n
-        AntiBot Add:               <:disabled:1087683956197031976>\n
-        AntiBan:                   <:disabled:1087683956197031976>
+        AntiRole Create/Delete:   <:disabled:1121707326529875978>,\n
+        AntiChannel Create/Delete:<:disabled:1121707326529875978>,\n
+        AntiWebhook Create/Delete:<:disabled:1121707326529875978>\n
+        AntiKick:                 <:disabled:1121707326529875978>\n
+        AntiBot Add:              <:disabled:1121707326529875978>\n
+        AntiBan:                  <:disabled:1121707326529875978>
         `
             )
             .setColor(client.color)
@@ -131,7 +131,7 @@ module.exports = {
     interaction.editReply({
       embeds: [
         new EmbedBuilder()
-          .setDescription(`${Anti[category]} <:disabled:1087683956197031976>`)
+          .setDescription(`${Anti[category]}<:disabled:1121707326529875978>`)
           .setColor(client.color),
       ],
     });

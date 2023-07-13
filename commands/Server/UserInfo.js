@@ -162,11 +162,6 @@ const flags = {
             inline: true,
           },
           {
-            name: "Flags",
-            value: `${userFlags.length ? userFlags.map(flag => flags[flag]).join(', ') : 'None'}`,
-            inline: true,
-          },
-          {
             name: "Discord joined at",
             value: `<t:${Math.round(member.user.createdTimestamp / 1000)}>`,
             inline: true,

@@ -1,7 +1,7 @@
 const { ShardingManager } = require('discord.js'); //imports the sharding manager
 require("dotenv").config();
 const manager = new ShardingManager('./index.js', { 
-  token: process.env.TOKEN || "", //paste your token here
+  token: process.env.TOKEN || "MTA3OTEyNDk5NjM4MDY4ODUwNg.Gp5TC1.2Dez1lJJWCtfQLqY0kqNy9_ZLXlU6ljYInI3o8", //paste your token here
   respawn: true,
   autoSpawn: true,
   totalShards: 1, //amount of shards

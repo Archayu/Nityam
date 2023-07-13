@@ -31,7 +31,7 @@ if (rawLeaderboard.length < 1) return client.errNormal({
 
 const lb = rawLeaderboard.map(e => `**${e.Invites} messages** - <@&${e.Role}>`);
 
-await client.createLeaderboard(`➕・Invites rewards - ${interaction.guild.name}`, lb, interaction);
+await client.createLeaderboard(`<:info:1121649249071927469>・Invites rewards - ${interaction.guild.name}`, lb, interaction);
 
     },
   };

@@ -31,7 +31,7 @@ const {
         const channel = interaction.options.getChannel('channel');
 
         client.embed({
-            title: `ℹ・Channel information`,
+            title: `<:info:1121649249071927469>・Channel information`,
             desc: `Channel information about: <#${channel.id}>`,
             fields: [
                 {

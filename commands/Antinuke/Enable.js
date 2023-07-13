@@ -55,7 +55,7 @@ module.exports = {
     inVoice: false,
     sameVoice: false,
   },
-  run: async (interaction, client, user, language) => {
+  run: async (interaction, client) => {
     if(!interaction.guild.me.permissions.has(PermissionFlagsBits.Administrator)) interaction .channel.send({
       content: "**Warning**: I Don't Have Administrator Permission, Please Gimme Perms Of Administrator"
     })
@@ -87,15 +87,15 @@ module.exports = {
       interaction.editReply({
         embeds: [
           new EmbedBuilder()
-            .setTitle("<a:antinuke:1087674015352623194> Antinuke Settings")
+            .setTitle("<:antinuke:1121649987009384519> Antinuke Settings")
             .setDescription(
               `
-        AntiRole Create/Delete:    <:enable:1087674705726668863>,\n
-        AntiChannel Create/Delete: <:enable:1087674705726668863>,\n
-        AntiWebhook Create/Delete: <:enable:1087674705726668863>\n
-        AntiKick:                  <:enable:1087674705726668863>\n
-        AntiBot Add:               <:enable:1087674705726668863>\n
-        AntiBan:                   <:enable:1087674705726668863>
+        AntiRole Create/Delete:    <:Enabled:1121706856189014086>\n
+        AntiChannel Create/Delete: <:Enabled:1121706856189014086>\n
+        AntiWebhook Create/Delete: <:Enabled:1121706856189014086>\n
+        AntiKick:                  <:Enabled:1121706856189014086>\n
+        AntiBot Add:               <:Enabled:1121706856189014086>\n
+        AntiBan:                   <:Enabled:1121706856189014086>
         `
             )
             .setColor(client.color)
@@ -131,7 +131,7 @@ module.exports = {
         interaction.editReply({
           embeds: [
             new EmbedBuilder()
-              .setDescription(`${Anti[category]} <:enable:1087674705726668863>`)
+              .setDescription(`${Anti[category]} <:Enabled:1121706856189014086>`)
               .setColor(client.color)
               .setTimestamp(),
           ],

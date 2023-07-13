@@ -87,7 +87,13 @@ const {
             embeds: [confirm],
         });
         
-
+        client.modLogs({ interaction, reason: "Not required", fields: [
+            {
+                name: "Action",
+                value: "Unlocking Down Guild",
+                inline: true
+            }
+        ]})
     },
   };
   

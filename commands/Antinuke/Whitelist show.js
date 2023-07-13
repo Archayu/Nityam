@@ -54,7 +54,7 @@ module.exports = {
         inVoice: false,
         sameVoice: false,
     },
-    run: async (interaction, client, user, language) => {
+    run: async (interaction, client) => {
 
         await interaction.deferReply();
 

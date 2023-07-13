@@ -33,7 +33,7 @@ const {
         const perms = new PermissionsBitField(role.permissions.bitfield).toArray();
 
         client.embed({
-            title: `ℹ️・Role information`,
+            title: `<:info:1121649249071927469>・Role information`,
             thumbnail: interaction.guild.iconURL({ dynamic: true, size: 1024 }),
             desc: `Information about the role ${role}`,
             fields: [

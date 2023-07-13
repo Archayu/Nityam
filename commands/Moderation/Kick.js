@@ -52,7 +52,7 @@ const {
                 .setDescription(`Kicked ${user.tag} (${user.id})`)
                 .setColor("Red")
                 .setTimestamp()
-                .setFooter(`Kicked by ${interaction.user.tag}`, interaction.user.displayAvatarURL())
+                .setFooter(`<:kick:1121649359507947540> Kicked by ${interaction.user.tag}`, interaction.user.displayAvatarURL())
             ]
 
         }).catch((err)=>{ console.log(err)

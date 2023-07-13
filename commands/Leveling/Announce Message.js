@@ -19,7 +19,7 @@ const {
     permissions: {
       channel: [],
       bot: [],
-      user: ["ManageMessages"],
+      user: ["ManageMessages", "Administrator"],
     },
     settings: {
       isPremium: false,

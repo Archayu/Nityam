@@ -57,7 +57,7 @@ module.exports = {
         inVoice: false,
         sameVoice: false,
     },
-    run: async (interaction, client, user, language) => {
+    run: async (interaction, client) => {
 
    const user1 = interaction.options.getUser('user');
   const category = interaction.options.getString('category');

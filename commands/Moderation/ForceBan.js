@@ -46,7 +46,18 @@ const {
             interaction.reply({ content: "Failed to ban user", ephemeral: true });
             console.log(e);
         });
-        interaction.reply({ content: `Banned ${userid} for ${reason}`, ephemeral: true});
+        interaction.reply({ content: `<:ban:1121649320509325393> Banned ${userid} for ${reason}`, ephemeral: true});
+        client.modLogs({ interaction, reason, fields: [
+          {
+              name: "Action",
+              value: "ForceBan",
+              inline: true
+          },
+          {
+              name: "Target",
+              value: `${user.id}`
+          }
+      ]})
 
     },
   };

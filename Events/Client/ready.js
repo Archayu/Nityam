@@ -8,7 +8,7 @@ module.exports = async (client) => {
     for (let user of users) {
       client.premiums.set(user.Id, user);
     }
-
+  
     let guilds = client.guilds.cache.size;
     let members = client.guilds.cache.reduce((a, b) => a + b.memberCount, 0);
     let channels = client.channels.cache.size;

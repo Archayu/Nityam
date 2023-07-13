@@ -70,12 +70,12 @@ const {
         desc: `See the answer on your question!`,
         fields: [
             {
-                name: `💬︙Your Question`,
+                name: `<:queue:1121649415610974270>︙Your Question`,
                 value: `\`\`\`${question}\`\`\``,
                 inline: false
             },
             {
-                name: `🤖︙Bot Answer`,
+                name: `<:discord_bot:1121649084604874842>︙Bot Answer`,
                 value: `\`\`\`${antwoorden[resultaat]}\`\`\``,
                 inline: false
             }

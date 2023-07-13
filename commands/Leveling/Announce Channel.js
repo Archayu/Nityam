@@ -22,7 +22,7 @@ const {
     permissions: {
       channel: [],
       bot: [],
-      user: ["ManageChannels"],
+      user: ["ManageChannels", "Administrator"],
     },
     settings: {
       isPremium: false,
